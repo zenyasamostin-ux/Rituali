@@ -1,0 +1,48 @@
+{
+  "today": {
+    "title": "Oggi",
+    "empty": "Oggi nessun rituale. Riposati, domani si continua.",
+    "upcoming": "In arrivo",
+    "streak": "Giorni di fila: {{count}}",
+    "tomorrow": "Domani"
+  },
+  "ritual": {
+    "needs": "Cosa ti serve",
+    "action": "Cosa fare",
+    "incantation": "Formula",
+    "reveal": "Mostra la formula",
+    "markDone": "Segna come fatto",
+    "done": "Fatto ✓",
+    "locked": "Un rituale speciale. Si sblocca con l’abbonamento.",
+    "subscribeSoon": "L’abbonamento arriverà presto",
+    "notFound": "Rituale non trovato"
+  },
+  "category": {
+    "weekly": "Rituale del giorno",
+    "monthly": "Rituale del mese",
+    "lunar": "Rituale lunare",
+    "seasonal": "Rituale di stagione",
+    "holiday": "Rituale di festa",
+    "personal": "Data speciale"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "language": "Lingua",
+    "languageAuto": "Lingua di sistema",
+    "rhythm": "Ogni quanto",
+    "rhythmDaily": "Ogni giorno",
+    "rhythmEveryOtherDay": "A giorni alterni",
+    "reminders": "Promemoria",
+    "payday": "Giorno di paga",
+    "billsDay": "Giorno delle bollette",
+    "birthday": "Compleanno",
+    "notSet": "Non impostato",
+    "clear": "Cancella",
+    "disclaimer": "I rituali sono solo un intrattenimento e non sono consulenza finanziaria. Attenzione alle candele accese."
+  },
+  "notification": {
+    "body": "{{emoji}} {{title}}: è l’ora del tuo rituale. Apri per scoprire la formula.",
+    "teaserTitle": "Sta arrivando un rituale speciale",
+    "teaserBody": "Domani: {{title}} 🔒"
+  }
+}

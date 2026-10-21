@@ -1,0 +1,48 @@
+{
+  "today": {
+    "title": "Today",
+    "empty": "No ritual today. Rest, and we’ll continue tomorrow.",
+    "upcoming": "Coming up",
+    "streak": "Day streak: {{count}}",
+    "tomorrow": "Tomorrow"
+  },
+  "ritual": {
+    "needs": "What you need",
+    "action": "What to do",
+    "incantation": "Incantation",
+    "reveal": "Reveal the incantation",
+    "markDone": "Mark as done",
+    "done": "Done ✓",
+    "locked": "A special ritual. Unlocks with a subscription.",
+    "subscribeSoon": "Subscription coming soon",
+    "notFound": "Ritual not found"
+  },
+  "category": {
+    "weekly": "Ritual of the day",
+    "monthly": "Ritual of the month",
+    "lunar": "Moon ritual",
+    "seasonal": "Seasonal ritual",
+    "holiday": "Holiday ritual",
+    "personal": "Special date"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "languageAuto": "System default",
+    "rhythm": "How often",
+    "rhythmDaily": "Every day",
+    "rhythmEveryOtherDay": "Every other day",
+    "reminders": "Reminders",
+    "payday": "Payday",
+    "billsDay": "Bills day",
+    "birthday": "Birthday",
+    "notSet": "Not set",
+    "clear": "Clear",
+    "disclaimer": "Rituals are for entertainment only and are not financial advice. Practice fire safety with candles."
+  },
+  "notification": {
+    "body": "{{emoji}} {{title}}: time for your ritual. Open to see the incantation.",
+    "teaserTitle": "A special ritual is coming",
+    "teaserBody": "Tomorrow: {{title}} 🔒"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "today": {
+    "title": "Aujourd’hui",
+    "empty": "Pas de rituel aujourd’hui. Reposez-vous, on reprend demain.",
+    "upcoming": "À venir",
+    "streak": "Jours d’affilée : {{count}}",
+    "tomorrow": "Demain"
+  },
+  "ritual": {
+    "needs": "Ce qu’il vous faut",
+    "action": "Ce qu’il faut faire",
+    "incantation": "Formule",
+    "reveal": "Afficher la formule",
+    "markDone": "Marquer comme fait",
+    "done": "Fait ✓",
+    "locked": "Un rituel spécial. Disponible avec l’abonnement.",
+    "subscribeSoon": "L’abonnement arrive bientôt",
+    "notFound": "Rituel introuvable"
+  },
+  "category": {
+    "weekly": "Rituel du jour",
+    "monthly": "Rituel du mois",
+    "lunar": "Rituel lunaire",
+    "seasonal": "Rituel de saison",
+    "holiday": "Rituel de fête",
+    "personal": "Date spéciale"
+  },
+  "settings": {
+    "title": "Réglages",
+    "language": "Langue",
+    "languageAuto": "Langue du système",
+    "rhythm": "Fréquence",
+    "rhythmDaily": "Chaque jour",
+    "rhythmEveryOtherDay": "Un jour sur deux",
+    "reminders": "Rappels",
+    "payday": "Jour de paie",
+    "billsDay": "Jour des factures",
+    "birthday": "Anniversaire",
+    "notSet": "Non défini",
+    "clear": "Effacer",
+    "disclaimer": "Les rituels sont un divertissement et ne constituent pas un conseil financier. Soyez prudent avec les bougies."
+  },
+  "notification": {
+    "body": "{{emoji}} {{title}} : c’est l’heure de votre rituel. Ouvrez pour découvrir la formule.",
+    "teaserTitle": "Un rituel spécial approche",
+    "teaserBody": "Demain : {{title}} 🔒"
+  }
+}
