@@ -14,6 +14,12 @@ npm run lint
 
 Напоминания работают только на телефоне, в вебе их нет. Для проверки на телефоне хватит Expo Go.
 
+### APK для Android
+
+GitHub Actions собирает APK при каждом PR и пуше в main (`.github/workflows/android-apk.yml`). Скачать его можно на вкладке Actions: откройте запуск «Android APK» и внизу, в разделе Artifacts, нажмите `ritualia-apk`. Внутри zip-архива лежит `app-release.apk`. Сборку можно запустить и вручную кнопкой Run workflow.
+
+APK подписан отладочным ключом. Он годится для тестов, но не для Google Play.
+
 ## Как устроено
 
 ```
