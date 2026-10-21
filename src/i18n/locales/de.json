@@ -1,0 +1,48 @@
+{
+  "today": {
+    "title": "Heute",
+    "empty": "Heute kein Ritual. Ruh dich aus, morgen geht es weiter.",
+    "upcoming": "Demnächst",
+    "streak": "Tage in Folge: {{count}}",
+    "tomorrow": "Morgen"
+  },
+  "ritual": {
+    "needs": "Was du brauchst",
+    "action": "Was zu tun ist",
+    "incantation": "Spruch",
+    "reveal": "Spruch anzeigen",
+    "markDone": "Als erledigt markieren",
+    "done": "Erledigt ✓",
+    "locked": "Ein besonderes Ritual. Mit einem Abo freigeschaltet.",
+    "subscribeSoon": "Abo kommt bald",
+    "notFound": "Ritual nicht gefunden"
+  },
+  "category": {
+    "weekly": "Ritual des Tages",
+    "monthly": "Ritual des Monats",
+    "lunar": "Mondritual",
+    "seasonal": "Jahreszeitenritual",
+    "holiday": "Festtagsritual",
+    "personal": "Besonderes Datum"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "language": "Sprache",
+    "languageAuto": "Systemsprache",
+    "rhythm": "Wie oft",
+    "rhythmDaily": "Jeden Tag",
+    "rhythmEveryOtherDay": "Jeden zweiten Tag",
+    "reminders": "Erinnerungen",
+    "payday": "Zahltag",
+    "billsDay": "Tag der Rechnungen",
+    "birthday": "Geburtstag",
+    "notSet": "Nicht festgelegt",
+    "clear": "Zurücksetzen",
+    "disclaimer": "Die Rituale dienen nur der Unterhaltung und sind keine Finanzberatung. Achte bei Kerzen auf Brandschutz."
+  },
+  "notification": {
+    "body": "{{emoji}} {{title}}: Zeit für dein Ritual. Öffne die App, um den Spruch zu sehen.",
+    "teaserTitle": "Bald ein besonderes Ritual",
+    "teaserBody": "Morgen: {{title}} 🔒"
+  }
+}

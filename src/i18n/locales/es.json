@@ -1,0 +1,48 @@
+{
+  "today": {
+    "title": "Hoy",
+    "empty": "Hoy no hay ritual. Descansa, mañana seguimos.",
+    "upcoming": "Próximamente",
+    "streak": "Días seguidos: {{count}}",
+    "tomorrow": "Mañana"
+  },
+  "ritual": {
+    "needs": "Qué necesitas",
+    "action": "Qué hacer",
+    "incantation": "Conjuro",
+    "reveal": "Mostrar el conjuro",
+    "markDone": "Marcar como hecho",
+    "done": "Hecho ✓",
+    "locked": "Un ritual especial. Se desbloquea con la suscripción.",
+    "subscribeSoon": "La suscripción llegará pronto",
+    "notFound": "Ritual no encontrado"
+  },
+  "category": {
+    "weekly": "Ritual del día",
+    "monthly": "Ritual del mes",
+    "lunar": "Ritual lunar",
+    "seasonal": "Ritual de temporada",
+    "holiday": "Ritual festivo",
+    "personal": "Fecha especial"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "language": "Idioma",
+    "languageAuto": "Idioma del sistema",
+    "rhythm": "Con qué frecuencia",
+    "rhythmDaily": "Cada día",
+    "rhythmEveryOtherDay": "Un día sí, un día no",
+    "reminders": "Recordatorios",
+    "payday": "Día de cobro",
+    "billsDay": "Día de facturas",
+    "birthday": "Cumpleaños",
+    "notSet": "Sin definir",
+    "clear": "Borrar",
+    "disclaimer": "Los rituales son solo entretenimiento y no constituyen asesoramiento financiero. Ten cuidado con las velas."
+  },
+  "notification": {
+    "body": "{{emoji}} {{title}}: es hora de tu ritual. Abre para ver el conjuro.",
+    "teaserTitle": "Se acerca un ritual especial",
+    "teaserBody": "Mañana: {{title}} 🔒"
+  }
+}
