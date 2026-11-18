@@ -1,10 +1,20 @@
 {
-  "today": {
-    "title": "Heute",
+  "home": {
+    "title": "Meine Rituale",
+    "today": "Heute",
     "empty": "Heute kein Ritual. Ruh dich aus, morgen geht es weiter.",
-    "upcoming": "Demnächst",
     "streak": "Tage in Folge: {{count}}",
-    "tomorrow": "Morgen"
+    "calendar": "Kalender",
+    "history": "Verlauf",
+    "noRituals": "An diesem Tag gibt es keine Rituale.",
+    "notify": "Erinnerung",
+    "mutedRitual": "Erinnerungen an dieses Ritual sind in den Einstellungen aus"
+  },
+  "history": {
+    "summary": "Erledigt: {{done}} · Verpasst: {{missed}}",
+    "done": "Erledigt",
+    "missed": "Verpasst",
+    "empty": "Hier erscheinen vergangene Rituale, erledigte und verpasste."
   },
   "ritual": {
     "needs": "Was du brauchst",
@@ -18,7 +28,7 @@
     "notFound": "Ritual nicht gefunden"
   },
   "category": {
-    "weekly": "Ritual des Tages",
+    "weekly": "Ritual der Woche",
     "monthly": "Ritual des Monats",
     "lunar": "Mondritual",
     "seasonal": "Jahreszeitenritual",
@@ -29,15 +39,10 @@
     "title": "Einstellungen",
     "language": "Sprache",
     "languageAuto": "Systemsprache",
-    "rhythm": "Wie oft",
-    "rhythmDaily": "Jeden Tag",
-    "rhythmEveryOtherDay": "Jeden zweiten Tag",
     "reminders": "Erinnerungen",
-    "payday": "Zahltag",
-    "billsDay": "Tag der Rechnungen",
-    "birthday": "Geburtstag",
-    "notSet": "Nicht festgelegt",
-    "clear": "Zurücksetzen",
+    "ritualNotifications": "Erinnerungen pro Ritual",
+    "testPremium": "Abo (Test)",
+    "testPremiumHint": "Schaltet kostenpflichtige Rituale zum Testen frei, ohne Zahlung.",
     "disclaimer": "Die Rituale dienen nur der Unterhaltung und sind keine Finanzberatung. Achte bei Kerzen auf Brandschutz."
   },
   "notification": {

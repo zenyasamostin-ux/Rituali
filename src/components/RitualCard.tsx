@@ -1,4 +1,5 @@
 import { router } from 'expo-router';
+import type { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
@@ -9,7 +10,8 @@ import { completionKey } from '../schedule/streak';
 import { useAppState } from '../state/AppState';
 import { colors, spacing } from '../theme';
 
-export function RitualCard({ occurrence }: { occurrence: Occurrence }) {
+/** A ritual on a given day. `accessory` replaces the lock and done badges on the right. */
+export function RitualCard({ occurrence, accessory }: { occurrence: Occurrence; accessory?: ReactNode }) {
   const { t } = useTranslation();
   const { language, done, isSubscribed } = useAppState();
   const { ritual, date, at } = occurrence;
@@ -31,8 +33,12 @@ export function RitualCard({ occurrence }: { occurrence: Occurrence }) {
           {t(`category.${ritual.category}`)} · {time}
         </Text>
       </View>
-      {locked && <Text style={styles.badge}>🔒</Text>}
-      {isDone && <Text style={styles.badge}>✓</Text>}
+      {accessory ?? (
+        <>
+          {locked && <Text style={styles.badge}>🔒</Text>}
+          {isDone && <Text style={styles.badge}>✓</Text>}
+        </>
+      )}
     </Pressable>
   );
 }

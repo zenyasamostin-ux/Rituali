@@ -1,16 +1,26 @@
 {
-  "today": {
-    "title": "Today",
+  "home": {
+    "title": "My rituals",
+    "today": "Today",
     "empty": "No ritual today. Rest, and we’ll continue tomorrow.",
-    "upcoming": "Coming up",
     "streak": "Day streak: {{count}}",
-    "tomorrow": "Tomorrow"
+    "calendar": "Calendar",
+    "history": "History",
+    "noRituals": "No rituals on this day.",
+    "notify": "Reminder",
+    "mutedRitual": "Reminders for this ritual are off in Settings"
+  },
+  "history": {
+    "summary": "Done: {{done}} · Missed: {{missed}}",
+    "done": "Done",
+    "missed": "Missed",
+    "empty": "Past rituals will show up here, done and missed."
   },
   "ritual": {
     "needs": "What you need",
     "action": "What to do",
-    "incantation": "Incantation",
-    "reveal": "Reveal the incantation",
+    "incantation": "Charm",
+    "reveal": "Reveal the charm",
     "markDone": "Mark as done",
     "done": "Done ✓",
     "locked": "A special ritual. Unlocks with a subscription.",
@@ -18,7 +28,7 @@
     "notFound": "Ritual not found"
   },
   "category": {
-    "weekly": "Ritual of the day",
+    "weekly": "Weekly ritual",
     "monthly": "Ritual of the month",
     "lunar": "Moon ritual",
     "seasonal": "Seasonal ritual",
@@ -29,19 +39,14 @@
     "title": "Settings",
     "language": "Language",
     "languageAuto": "System default",
-    "rhythm": "How often",
-    "rhythmDaily": "Every day",
-    "rhythmEveryOtherDay": "Every other day",
     "reminders": "Reminders",
-    "payday": "Payday",
-    "billsDay": "Bills day",
-    "birthday": "Birthday",
-    "notSet": "Not set",
-    "clear": "Clear",
+    "ritualNotifications": "Reminders by ritual",
+    "testPremium": "Subscription (test)",
+    "testPremiumHint": "Unlocks paid rituals for testing, no payment.",
     "disclaimer": "Rituals are for entertainment only and are not financial advice. Practice fire safety with candles."
   },
   "notification": {
-    "body": "{{emoji}} {{title}}: time for your ritual. Open to see the incantation.",
+    "body": "{{emoji}} {{title}}: time for your ritual. Open to see the charm.",
     "teaserTitle": "A special ritual is coming",
     "teaserBody": "Tomorrow: {{title}} 🔒"
   }

@@ -7,20 +7,15 @@ export type Category = 'weekly' | 'monthly' | 'lunar' | 'seasonal' | 'holiday' |
 
 /** When a ritual happens. Times live on the ritual, rules only pick the day. */
 export type Rule =
-  /** Two alternating weeks A and B; weekday is ISO (1 = Monday). */
-  | { kind: 'cycle'; week: 'A' | 'B'; weekday: number }
+  /** Every week on this ISO weekday (1 = Monday). */
+  | { kind: 'weekly'; weekday: number }
   | { kind: 'monthDay'; day: number }
-  | { kind: 'lastDayOfMonth' }
-  /** A day of the month the user sets in their profile. */
-  | { kind: 'profileDay'; field: 'payday' | 'billsDay' }
   | { kind: 'moon'; phase: MoonPhase }
   | { kind: 'season'; event: SeasonEvent }
   | { kind: 'fixedDate'; month: number; day: number }
   /** 01.01, 02.02 … 12.12 */
   | { kind: 'mirrorDate' }
-  | { kind: 'movable'; event: 'chineseNewYear' | 'maslenitsa' }
-  | { kind: 'eclipse' }
-  | { kind: 'birthday' };
+  | { kind: 'movable'; event: 'chineseNewYear' | 'maslenitsa' };
 
 export interface Ritual {
   id: string;

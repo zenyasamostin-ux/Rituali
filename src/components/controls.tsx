@@ -25,28 +25,6 @@ export function Chip({ label, selected, onPress }: { label: string; selected: bo
   );
 }
 
-export function Stepper({
-  value,
-  min,
-  max,
-  format = String,
-  onChange,
-}: {
-  value: number;
-  min: number;
-  max: number;
-  format?: (n: number) => string;
-  onChange: (n: number) => void;
-}) {
-  return (
-    <View style={styles.stepper}>
-      <Chip label="−" selected={false} onPress={() => onChange(value <= min ? max : value - 1)} />
-      <Text style={styles.stepperValue}>{format(value)}</Text>
-      <Chip label="+" selected={false} onPress={() => onChange(value >= max ? min : value + 1)} />
-    </View>
-  );
-}
-
 export const controlStyles = StyleSheet.create({
   row: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm },
 });
@@ -66,6 +44,4 @@ const styles = StyleSheet.create({
   chipSelected: { backgroundColor: colors.gold, borderColor: colors.gold },
   chipText: { fontSize: 15, color: colors.ink },
   chipTextSelected: { color: '#FFFFFF', fontWeight: '600' },
-  stepper: { flexDirection: 'row', alignItems: 'center', gap: spacing.md },
-  stepperValue: { minWidth: 96, textAlign: 'center', fontSize: 16, color: colors.ink },
 });

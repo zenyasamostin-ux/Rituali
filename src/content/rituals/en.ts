@@ -11,7 +11,7 @@ export const en: Record<string, RitualText> = {
   'doorstep-coin': {
     title: 'Coin at the Door',
     needs: 'A coin of any value',
-    action: 'Place the coin under the doormat by your front door, number side up.',
+    action: 'Place the coin under the doormat by your front door, value side up.',
     incantation: '“A coin by the door shows money the way to my floor”',
   },
   'mint-tea': {
@@ -23,7 +23,7 @@ export const en: Record<string, RitualText> = {
   'cinnamon-coffee': {
     title: 'Cinnamon Coffee',
     needs: 'Coffee, ground cinnamon',
-    action: 'Add cinnamon to your coffee and say the incantation while you stir.',
+    action: 'Add cinnamon to your coffee and say the charm while you stir.',
     incantation: '“As cinnamon adds to the taste, so money adds to my days”',
   },
   'money-tree': {
@@ -35,26 +35,20 @@ export const en: Record<string, RitualText> = {
   'clean-hallway': {
     title: 'Clean Hallway',
     needs: 'A broom or a cloth',
-    action: 'Sweep or mop the hallway, from the front door inward.',
+    action: 'Sweep or mop the hallway, sweeping the dust toward the door and out of your home.',
     incantation: '“I sweep out want, I welcome wealth”',
   },
   'gratitude-list': {
     title: 'Gratitude List',
     needs: 'A notebook or a note on your phone',
-    action: 'Write down three money joys from this week, even the smallest ones.',
+    action: 'Write down three or more things you are grateful for from the past week, even the smallest joys.',
     incantation: '“Thank you for what has come. I’m ready for more”',
   },
   'abundance-rice': {
     title: 'Rice of Plenty',
     needs: 'A jar, a handful of rice, a coin',
-    action: 'Pour the rice into the jar, put the coin on top and keep it in the kitchen. Add one coin every week B.',
+    action: 'Pour a handful of rice into a jar and keep it in the kitchen. Add one coin on top every week.',
     incantation: '“As many grains in the jar, so much money in my hands”',
-  },
-  'honey-spoon': {
-    title: 'Honey Spoon',
-    needs: 'A spoonful of honey, tea or warm water',
-    action: 'Stir the honey into your drink and sip it slowly.',
-    incantation: '“As honey is sweet and sticks, so money sticks to me”',
   },
   'bay-leaf': {
     title: 'Bay Leaf',
@@ -72,7 +66,7 @@ export const en: Record<string, RitualText> = {
     title: 'Keeper Bill',
     needs: 'One banknote',
     action: 'Tuck the bill into a hidden pocket of your wallet and never spend it.',
-    incantation: '“You stay with me, and call your friends to join”',
+    incantation: '“Keeper bill, live in my wallet and call your friends to join you”',
   },
   'light-hand': {
     title: 'Light Hand',
@@ -80,40 +74,16 @@ export const en: Record<string, RitualText> = {
     action: 'Pay back a small debt or give a little to charity. The amount is up to you.',
     incantation: '“I give with ease, I receive with gain”',
   },
-  'salt-wash': {
-    title: 'Salt Rinse',
-    needs: 'A glass of water, a pinch of salt',
-    action: 'Dissolve the salt in the water and rinse your hands, shaking the water into the sink.',
-    incantation: '“Water washes away the empty, salt keeps what I have earned”',
-  },
   'first-coin': {
     title: 'First Coin of the Month',
     needs: 'A piggy bank, a coin',
     action: 'Drop a coin into the piggy bank before you spend anything.',
     incantation: '“A new month begins, my savings grow”',
   },
-  'tenth-part': {
-    title: 'The Tenth Part',
-    needs: 'Your banking app or an envelope',
-    action: 'Set aside part of your income, say 10%, into savings or an envelope. The amount is up to you.',
-    incantation: '“One tenth for me, the rest to work”',
-  },
-  'easy-payment': {
-    title: 'Easy Payment',
-    needs: 'This month’s bills',
-    action: 'Pay all the bills in one sitting and give thanks that you have the means to pay.',
-    incantation: '“I pay with ease, and money returns with gain”',
-  },
-  'month-close': {
-    title: 'Closing the Month',
-    needs: 'A notebook or a note',
-    action: 'Count what came in and what went out, and write down one money goal for next month.',
-    incantation: '“I close the old, I open the new”',
-  },
   'new-moon-wallet': {
     title: 'Empty Wallet for the New Moon',
     needs: 'Your wallet',
-    action: 'Open your wallet by the window, show it to the sky and name your money goal for the month.',
+    action: 'In the evening, open your wallet by the window, show it to the young moon and name your money goal for the month.',
     incantation: '“Young moon, as you grow, my money grows”',
   },
   'windowsill-coins': {
@@ -125,7 +95,7 @@ export const en: Record<string, RitualText> = {
   'moon-water': {
     title: 'Moon Water',
     needs: 'A glass, water, a coin',
-    action: 'Set the glass with the coin on the windowsill. In the morning, water your money tree with it.',
+    action: 'Fill a glass with water, drop the coin in and leave it on the windowsill overnight. In the morning, water your money tree with it.',
     incantation: '“Full moon, full cup”',
   },
   'release-debts': {
@@ -139,18 +109,6 @@ export const en: Record<string, RitualText> = {
     needs: 'A pot of soil, a seed, a coin',
     action: 'Place the coin at the bottom of the pot and plant the seed above it.',
     incantation: '“I sow a coin, I will reap a harvest”',
-  },
-  'sun-coin': {
-    title: 'Sun Coin',
-    needs: 'A gold-colored coin',
-    action: 'At noon, hold the coin in the sunlight, then carry it in your wallet until next summer.',
-    incantation: '“The sun is high, and so is my income”',
-  },
-  harvest: {
-    title: 'Harvest',
-    needs: 'An apple, a plate, coins',
-    action: 'Place the apple on a plate inside a circle of coins, recall your money wins of the year, then eat the apple.',
-    incantation: '“What I have sown I now gather, and twice over”',
   },
   'rebirth-candle': {
     title: 'Candle of Return',
@@ -167,7 +125,7 @@ export const en: Record<string, RitualText> = {
   'grain-scatter': {
     title: 'Scattering Grain',
     needs: 'A handful of millet or rice',
-    action: 'Scatter the grain at your doorstep. On the morning of 14 January, sweep it inside, then give it to the birds.',
+    action: 'In the evening, scatter a handful of grain inside your home by the door. On the morning of 14 January, gather it up and give it to the birds.',
     incantation: '“I sow, I scatter, I call plenty into my home”',
   },
   'red-envelope': {
@@ -182,22 +140,10 @@ export const en: Record<string, RitualText> = {
     action: 'Bake the first pancake while thinking of your money goal, and share it with someone close.',
     incantation: '“Round as a coin, roll wealth into my home”',
   },
-  'money-year': {
-    title: 'Money Year',
-    needs: 'An envelope, one coin for each year of your age',
-    action: 'Put as many coins into the envelope as the years you turn, plus one more “to grow”. Keep it for a year.',
-    incantation: '“As many years, as many riches, and one more on top”',
-  },
   'mirror-bill': {
     title: 'Mirror Bill',
     needs: 'A banknote, a mirror',
-    action: 'Look into the mirror while holding the bill and say the incantation twice.',
+    action: 'Look into the mirror while holding the bill and say the charm twice.',
     incantation: '“Doubled in the mirror, doubled in my pocket”',
-  },
-  reset: {
-    title: 'Reset',
-    needs: 'A sheet of paper, a pen',
-    action: 'Write down one money habit that holds you back and a new one to replace it. Cross out the old one.',
-    incantation: '“The shadow leaves, light and plenty arrive”',
   },
 };

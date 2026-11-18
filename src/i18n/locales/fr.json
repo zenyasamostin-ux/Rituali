@@ -1,10 +1,20 @@
 {
-  "today": {
-    "title": "Aujourd’hui",
+  "home": {
+    "title": "Mes rituels",
+    "today": "Aujourd’hui",
     "empty": "Pas de rituel aujourd’hui. Reposez-vous, on reprend demain.",
-    "upcoming": "À venir",
     "streak": "Jours d’affilée : {{count}}",
-    "tomorrow": "Demain"
+    "calendar": "Calendrier",
+    "history": "Historique",
+    "noRituals": "Aucun rituel ce jour-là.",
+    "notify": "Rappel",
+    "mutedRitual": "Les rappels de ce rituel sont désactivés dans les réglages"
+  },
+  "history": {
+    "summary": "Faits : {{done}} · Manqués : {{missed}}",
+    "done": "Fait",
+    "missed": "Manqué",
+    "empty": "Les rituels passés apparaîtront ici, faits et manqués."
   },
   "ritual": {
     "needs": "Ce qu’il vous faut",
@@ -18,7 +28,7 @@
     "notFound": "Rituel introuvable"
   },
   "category": {
-    "weekly": "Rituel du jour",
+    "weekly": "Rituel de la semaine",
     "monthly": "Rituel du mois",
     "lunar": "Rituel lunaire",
     "seasonal": "Rituel de saison",
@@ -29,15 +39,10 @@
     "title": "Réglages",
     "language": "Langue",
     "languageAuto": "Langue du système",
-    "rhythm": "Fréquence",
-    "rhythmDaily": "Chaque jour",
-    "rhythmEveryOtherDay": "Un jour sur deux",
     "reminders": "Rappels",
-    "payday": "Jour de paie",
-    "billsDay": "Jour des factures",
-    "birthday": "Anniversaire",
-    "notSet": "Non défini",
-    "clear": "Effacer",
+    "ritualNotifications": "Rappels par rituel",
+    "testPremium": "Abonnement (test)",
+    "testPremiumHint": "Débloque les rituels payants pour les tests, sans paiement.",
     "disclaimer": "Les rituels sont un divertissement et ne constituent pas un conseil financier. Soyez prudent avec les bougies."
   },
   "notification": {
