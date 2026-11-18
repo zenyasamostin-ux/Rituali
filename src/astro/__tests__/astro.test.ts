@@ -1,4 +1,4 @@
-import { chineseNewYear, maslenitsaStart, orthodoxEaster } from '../holidays';
+import { chineseNewYear } from '../holidays';
 import { moonPhasesBetween } from '../moon';
 import { seasonEventDate } from '../seasons';
 
@@ -44,16 +44,6 @@ describe('seasons', () => {
 });
 
 describe('holidays', () => {
-  it('computes Orthodox Easter', () => {
-    expect(orthodoxEaster(2024)).toEqual({ year: 2024, month: 5, day: 5 });
-    expect(orthodoxEaster(2025)).toEqual({ year: 2025, month: 4, day: 20 });
-    expect(orthodoxEaster(2026)).toEqual({ year: 2026, month: 4, day: 12 });
-  });
-
-  it('starts Maslenitsa on Monday 16 February 2026', () => {
-    expect(maslenitsaStart(2026)).toEqual({ year: 2026, month: 2, day: 16 });
-  });
-
   it('knows Chinese New Year 2027', () => {
     expect(chineseNewYear(2027)).toEqual({ year: 2027, month: 2, day: 6 });
     expect(chineseNewYear(2099)).toBeUndefined();

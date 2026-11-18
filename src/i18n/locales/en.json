@@ -25,7 +25,8 @@
     "done": "Done ✓",
     "locked": "A special ritual. Unlocks with a subscription.",
     "subscribeSoon": "Subscription coming soon",
-    "notFound": "Ritual not found"
+    "notFound": "Ritual not found",
+    "about": "About"
   },
   "category": {
     "weekly": "Weekly ritual",
@@ -33,7 +34,7 @@
     "lunar": "Moon ritual",
     "seasonal": "Seasonal ritual",
     "holiday": "Holiday ritual",
-    "personal": "Special date"
+    "simoron": "Simoron"
   },
   "settings": {
     "title": "Settings",

@@ -25,7 +25,8 @@
     "done": "Erledigt ✓",
     "locked": "Ein besonderes Ritual. Mit einem Abo freigeschaltet.",
     "subscribeSoon": "Abo kommt bald",
-    "notFound": "Ritual nicht gefunden"
+    "notFound": "Ritual nicht gefunden",
+    "about": "Über das Ritual"
   },
   "category": {
     "weekly": "Ritual der Woche",
@@ -33,7 +34,7 @@
     "lunar": "Mondritual",
     "seasonal": "Jahreszeitenritual",
     "holiday": "Festtagsritual",
-    "personal": "Besonderes Datum"
+    "simoron": "Simoron"
   },
   "settings": {
     "title": "Einstellungen",

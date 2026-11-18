@@ -25,7 +25,8 @@
     "done": "Fait ✓",
     "locked": "Un rituel spécial. Disponible avec l’abonnement.",
     "subscribeSoon": "L’abonnement arrive bientôt",
-    "notFound": "Rituel introuvable"
+    "notFound": "Rituel introuvable",
+    "about": "À propos"
   },
   "category": {
     "weekly": "Rituel de la semaine",
@@ -33,7 +34,7 @@
     "lunar": "Rituel lunaire",
     "seasonal": "Rituel de saison",
     "holiday": "Rituel de fête",
-    "personal": "Date spéciale"
+    "simoron": "Simoron"
   },
   "settings": {
     "title": "Réglages",

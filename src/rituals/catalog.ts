@@ -33,10 +33,15 @@ export const CATALOG: Ritual[] = [
   { id: 'bill-in-hand', tier: 'premium', category: 'holiday', emoji: '🎆', time: '23:50', rule: { kind: 'fixedDate', month: 12, day: 31 } },
   { id: 'grain-scatter', tier: 'premium', category: 'holiday', emoji: '🌾', time: '19:00', rule: { kind: 'fixedDate', month: 1, day: 13 } },
   { id: 'red-envelope', tier: 'premium', category: 'holiday', emoji: '🧧', time: '10:00', rule: { kind: 'movable', event: 'chineseNewYear' } },
-  { id: 'golden-pancake', tier: 'premium', category: 'holiday', emoji: '🥞', time: '10:00', rule: { kind: 'movable', event: 'maslenitsa' } },
 
-  // Special dates, premium
-  { id: 'mirror-bill', tier: 'premium', category: 'personal', emoji: '🪞', time: '12:00', rule: { kind: 'mirrorDate' } },
+  // Simoron, free. The sources give no dates, so they are spread over the week.
+  { id: 'purring-cat', tier: 'free', category: 'simoron', emoji: '🐈', time: '19:00', rule: { kind: 'weekly', weekday: 2 } },
+  { id: 'money-dumplings', tier: 'free', category: 'simoron', emoji: '🥟', time: '19:00', rule: { kind: 'weekly', weekday: 3 } },
+  { id: 'hot-pepper', tier: 'free', category: 'simoron', emoji: '🌶️', time: '13:00', rule: { kind: 'weekly', weekday: 4 } },
+  { id: 'wallet-charging', tier: 'free', category: 'simoron', emoji: '🔌', time: '22:00', rule: { kind: 'weekly', weekday: 5 } },
+  { id: 'chopping-cabbage', tier: 'free', category: 'simoron', emoji: '🥬', time: '12:00', rule: { kind: 'weekly', weekday: 6 } },
+  { id: 'luck-favourites', tier: 'free', category: 'simoron', emoji: '🍀', time: '10:00', rule: { kind: 'weekly', weekday: 7 } },
+  { id: 'profit-rose', tier: 'free', category: 'simoron', emoji: '🌹', time: '12:00', rule: { kind: 'monthDay', day: 15 } },
 ];
 
 export const RITUALS_BY_ID: Record<string, Ritual> = Object.fromEntries(CATALOG.map((r) => [r.id, r]));

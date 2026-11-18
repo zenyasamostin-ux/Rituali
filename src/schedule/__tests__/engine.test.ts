@@ -8,7 +8,7 @@ function idsOn(date: string): string[] {
 describe('weekly rituals', () => {
   it('repeats every week on the same day', () => {
     for (const thursday of ['2026-11-19', '2026-11-26', '2026-12-03']) {
-      expect(idsOn(thursday)).toEqual(['cinnamon-coffee', 'golden-orange']);
+      expect(idsOn(thursday)).toEqual(['cinnamon-coffee', 'golden-orange', 'hot-pepper']);
     }
   });
 
@@ -28,12 +28,10 @@ describe('dated rituals', () => {
     expect(idsOn('2026-10-26')).toContain('moon-water');
   });
 
-  it('finds solstices, holidays and mirror dates', () => {
+  it('finds solstices and holidays', () => {
     expect(idsOn('2026-12-21')).toContain('rebirth-candle');
     expect(idsOn('2026-12-31')).toContain('bill-in-hand');
     expect(idsOn('2027-02-06')).toContain('red-envelope');
-    expect(idsOn('2027-03-08')).toContain('golden-pancake');
-    expect(idsOn('2026-11-11')).toContain('mirror-bill');
   });
 
   it('applies the user time override', () => {

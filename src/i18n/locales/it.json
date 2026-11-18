@@ -25,7 +25,8 @@
     "done": "Fatto ✓",
     "locked": "Un rituale speciale. Si sblocca con l’abbonamento.",
     "subscribeSoon": "L’abbonamento arriverà presto",
-    "notFound": "Rituale non trovato"
+    "notFound": "Rituale non trovato",
+    "about": "Il rituale"
   },
   "category": {
     "weekly": "Rituale della settimana",
@@ -33,7 +34,7 @@
     "lunar": "Rituale lunare",
     "seasonal": "Rituale di stagione",
     "holiday": "Rituale di festa",
-    "personal": "Data speciale"
+    "simoron": "Simoron"
   },
   "settings": {
     "title": "Impostazioni",

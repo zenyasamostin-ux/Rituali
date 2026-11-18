@@ -1,4 +1,4 @@
-import { chineseNewYear, maslenitsaStart } from '../astro/holidays';
+import { chineseNewYear } from '../astro/holidays';
 import { moonPhasesBetween, type MoonPhase } from '../astro/moon';
 import { seasonEventDate, type SeasonEvent } from '../astro/seasons';
 import { CATALOG } from '../rituals/catalog';
@@ -22,7 +22,6 @@ interface EventDays {
   moon: Record<MoonPhase, Set<string>>;
   season: Record<SeasonEvent, Set<string>>;
   chineseNewYear: Set<string>;
-  maslenitsa: Set<string>;
 }
 
 function collectEventDays(start: LocalDate, end: LocalDate): EventDays {
@@ -38,16 +37,14 @@ function collectEventDays(start: LocalDate, end: LocalDate): EventDays {
     decemberSolstice: new Set(),
   };
   const chinese = new Set<string>();
-  const maslenitsa = new Set<string>();
   for (let year = start.year; year <= end.year; year++) {
     for (const event of Object.keys(season) as SeasonEvent[]) {
       season[event].add(key(fromDate(seasonEventDate(event, year))));
     }
     const cny = chineseNewYear(year);
     if (cny) chinese.add(key(cny));
-    maslenitsa.add(key(maslenitsaStart(year)));
   }
-  return { moon, season, chineseNewYear: chinese, maslenitsa };
+  return { moon, season, chineseNewYear: chinese };
 }
 
 function matches(rule: Rule, day: LocalDate, events: EventDays): boolean {
@@ -63,8 +60,6 @@ function matches(rule: Rule, day: LocalDate, events: EventDays): boolean {
       return events.season[rule.event].has(k);
     case 'fixedDate':
       return day.month === rule.month && day.day === rule.day;
-    case 'mirrorDate':
-      return day.month === day.day;
     case 'movable':
       return events[rule.event].has(k);
   }

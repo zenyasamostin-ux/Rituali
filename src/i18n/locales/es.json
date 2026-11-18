@@ -25,7 +25,8 @@
     "done": "Hecho ✓",
     "locked": "Un ritual especial. Se desbloquea con la suscripción.",
     "subscribeSoon": "La suscripción llegará pronto",
-    "notFound": "Ritual no encontrado"
+    "notFound": "Ritual no encontrado",
+    "about": "Sobre el ritual"
   },
   "category": {
     "weekly": "Ritual de la semana",
@@ -33,7 +34,7 @@
     "lunar": "Ritual lunar",
     "seasonal": "Ritual de temporada",
     "holiday": "Ritual festivo",
-    "personal": "Fecha especial"
+    "simoron": "Simoron"
   },
   "settings": {
     "title": "Ajustes",

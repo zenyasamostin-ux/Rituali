@@ -10,6 +10,7 @@ describe('history', () => {
     const list = history(day(18), day(16), {}, done);
     expect(list.map((e) => [e.occurrence.ritual.id, e.done])).toEqual([
       ['windowsill-coins', false],
+      ['purring-cat', false],
       ['doorstep-coin', false],
       ['abundance-rice', false],
       ['clean-wallet', true],
@@ -22,6 +23,6 @@ describe('history', () => {
 
   it('looks back at most maxDays days', () => {
     const list = history(day(18), { year: 2026, month: 1, day: 1 }, {}, new Set(), 1);
-    expect(list.map((e) => e.occurrence.ritual.id)).toEqual(['windowsill-coins', 'doorstep-coin']);
+    expect(list.map((e) => e.occurrence.ritual.id)).toEqual(['windowsill-coins', 'purring-cat', 'doorstep-coin']);
   });
 });
