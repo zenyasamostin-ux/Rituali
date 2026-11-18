@@ -1,4 +1,4 @@
-// Moon phases and eclipses after Jean Meeus, "Astronomical Algorithms", ch. 49 and 54.
+// Moon phases after Jean Meeus, "Astronomical Algorithms", ch. 49.
 // The small planetary terms are omitted: the error stays within a couple of minutes,
 // which is plenty for picking the day of a ritual.
 import { cosDeg, jdToDate, sinDeg } from './julian';
@@ -7,13 +7,6 @@ export type MoonPhase = 'new' | 'firstQuarter' | 'full' | 'lastQuarter';
 
 export interface MoonEvent {
   phase: MoonPhase;
-  date: Date;
-}
-
-export type EclipseKind = 'solar' | 'lunar';
-
-export interface Eclipse {
-  kind: EclipseKind;
   date: Date;
 }
 
@@ -117,74 +110,18 @@ function lunationAt(date: Date): number {
   return Math.floor(years * 12.3685);
 }
 
-interface PhaseWithK extends MoonEvent {
-  k: number;
-}
-
-function phasesBetween(from: Date, to: Date): PhaseWithK[] {
-  const events: PhaseWithK[] = [];
+/** All main moon phases whose instant falls in [from, to). */
+export function moonPhasesBetween(from: Date, to: Date): MoonEvent[] {
+  const events: MoonEvent[] = [];
   const phases = Object.keys(PHASE_OFFSET) as MoonPhase[];
   for (let n = lunationAt(from) - 1; ; n++) {
     let past = false;
     for (const phase of phases) {
-      const k = n + PHASE_OFFSET[phase];
-      const date = jdToDate(phaseJde(k, phase));
+      const date = jdToDate(phaseJde(n + PHASE_OFFSET[phase], phase));
       if (date >= to) past = true;
-      else if (date >= from) events.push({ phase, date, k });
+      else if (date >= from) events.push({ phase, date });
     }
     if (past) break;
   }
   return events;
-}
-
-/** All main moon phases whose instant falls in [from, to). */
-export function moonPhasesBetween(from: Date, to: Date): MoonEvent[] {
-  return phasesBetween(from, to).map(({ phase, date }) => ({ phase, date }));
-}
-
-/**
- * Solar eclipses of any type and umbral lunar eclipses (partial or total).
- * Penumbral lunar eclipses are skipped: they are barely visible.
- */
-export function eclipsesBetween(from: Date, to: Date): Eclipse[] {
-  const result: Eclipse[] = [];
-  for (const event of phasesBetween(from, to)) {
-    if (event.phase !== 'new' && event.phase !== 'full') continue;
-    const { E, M, Mp, F, omega } = args(event.k);
-    // Too far from a lunar node: no eclipse possible.
-    if (Math.abs(sinDeg(F)) > 0.36) continue;
-
-    const F1 = F - 0.02665 * sinDeg(omega);
-    const P =
-      0.207 * E * sinDeg(M) +
-      0.0024 * E * sinDeg(2 * M) -
-      0.0392 * sinDeg(Mp) +
-      0.0116 * sinDeg(2 * Mp) -
-      0.0073 * E * sinDeg(Mp + M) +
-      0.0067 * E * sinDeg(Mp - M) +
-      0.0118 * sinDeg(2 * F1);
-    const Q =
-      5.2207 -
-      0.0048 * E * cosDeg(M) +
-      0.002 * E * cosDeg(2 * M) -
-      0.3299 * cosDeg(Mp) -
-      0.006 * E * cosDeg(Mp + M) +
-      0.0041 * E * cosDeg(Mp - M);
-    const W = Math.abs(cosDeg(F1));
-    const gamma = Math.abs((P * cosDeg(F1) + Q * sinDeg(F1)) * (1 - 0.0048 * W));
-    const u =
-      0.0059 +
-      0.0046 * E * cosDeg(M) -
-      0.0182 * cosDeg(Mp) +
-      0.0004 * cosDeg(2 * Mp) -
-      0.0005 * cosDeg(M + Mp);
-
-    if (event.phase === 'new' && gamma < 1.5433 + u) {
-      result.push({ kind: 'solar', date: event.date });
-    }
-    if (event.phase === 'full' && (1.0128 - u - gamma) / 0.545 > 0) {
-      result.push({ kind: 'lunar', date: event.date });
-    }
-  }
-  return result;
 }

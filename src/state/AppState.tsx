@@ -2,12 +2,16 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createContext, type ReactNode, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 import i18n, { deviceLanguage, type Language } from '../i18n';
-import type { ScheduleProfile } from '../schedule/engine';
+import type { ReminderProfile } from '../notifications/plan';
 import { fromDate, key } from '../schedule/localDate';
 
-export interface Profile extends ScheduleProfile {
+export interface Profile extends ReminderProfile {
   language: Language | 'auto';
   remindersOn: boolean;
+  /** First day in the app, YYYY-MM-DD: history starts here. */
+  startDate: string;
+  /** Paid rituals unlocked for testing until RevenueCat is connected. */
+  testPremium: boolean;
 }
 
 interface AppState {
@@ -17,7 +21,6 @@ interface AppState {
   updateProfile: (patch: Partial<Profile>) => void;
   done: ReadonlySet<string>;
   toggleDone: (completionKey: string) => void;
-  /** Placeholder until RevenueCat is connected. */
   isSubscribed: boolean;
 }
 
@@ -28,8 +31,10 @@ function defaultProfile(): Profile {
   return {
     language: 'auto',
     remindersOn: true,
-    rhythm: 'daily',
-    cycleStart: key(fromDate(new Date())),
+    startDate: key(fromDate(new Date())),
+    testPremium: true,
+    mutedRituals: [],
+    mutedOccurrences: [],
   };
 }
 
@@ -46,7 +51,12 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
         AsyncStorage.getItem(PROFILE_KEY),
         AsyncStorage.getItem(DONE_KEY),
       ]);
-      if (storedProfile) setProfile({ ...defaultProfile(), ...JSON.parse(storedProfile) });
+      if (storedProfile) {
+        const stored = JSON.parse(storedProfile);
+        const base = defaultProfile();
+        // Profiles from the first build kept the start day as cycleStart.
+        setProfile({ ...base, startDate: stored.cycleStart ?? base.startDate, ...stored });
+      }
       else AsyncStorage.setItem(PROFILE_KEY, JSON.stringify(defaultProfile()));
       if (storedDone) setDone(new Set(JSON.parse(storedDone)));
       setReady(true);
@@ -77,7 +87,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(
-    () => ({ ready, profile, language, updateProfile, done, toggleDone, isSubscribed: false }),
+    () => ({ ready, profile, language, updateProfile, done, toggleDone, isSubscribed: profile.testPremium }),
     [ready, profile, language, updateProfile, done, toggleDone],
   );
   return <AppStateContext.Provider value={value}>{children}</AppStateContext.Provider>;

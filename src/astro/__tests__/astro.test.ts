@@ -1,5 +1,5 @@
-import { chineseNewYear, maslenitsaStart, orthodoxEaster } from '../holidays';
-import { eclipsesBetween, moonPhasesBetween } from '../moon';
+import { chineseNewYear } from '../holidays';
+import { moonPhasesBetween } from '../moon';
 import { seasonEventDate } from '../seasons';
 
 const MINUTE = 60_000;
@@ -34,27 +34,6 @@ describe('moon phases', () => {
   });
 });
 
-describe('eclipses', () => {
-  it('finds the 2024 and 2026 eclipses but skips penumbral ones', () => {
-    const list = eclipsesBetween(new Date('2024-01-01T00:00Z'), new Date('2027-01-01T00:00Z'));
-    const days = list.map((e) => `${e.kind} ${e.date.toISOString().slice(0, 10)}`);
-    expect(days).toEqual([
-      // 2024-03-25 penumbral lunar: skipped
-      'solar 2024-04-08',
-      'lunar 2024-09-18',
-      'solar 2024-10-02',
-      'lunar 2025-03-14',
-      'solar 2025-03-29',
-      'lunar 2025-09-07',
-      'solar 2025-09-21',
-      'solar 2026-02-17',
-      'lunar 2026-03-03',
-      'solar 2026-08-12',
-      'lunar 2026-08-28',
-    ]);
-  });
-});
-
 describe('seasons', () => {
   it('matches the 2024 equinoxes and solstices', () => {
     expectNear(seasonEventDate('marchEquinox', 2024), '2024-03-20T03:06Z', 10);
@@ -65,16 +44,6 @@ describe('seasons', () => {
 });
 
 describe('holidays', () => {
-  it('computes Orthodox Easter', () => {
-    expect(orthodoxEaster(2024)).toEqual({ year: 2024, month: 5, day: 5 });
-    expect(orthodoxEaster(2025)).toEqual({ year: 2025, month: 4, day: 20 });
-    expect(orthodoxEaster(2026)).toEqual({ year: 2026, month: 4, day: 12 });
-  });
-
-  it('starts Maslenitsa on Monday 16 February 2026', () => {
-    expect(maslenitsaStart(2026)).toEqual({ year: 2026, month: 2, day: 16 });
-  });
-
   it('knows Chinese New Year 2027', () => {
     expect(chineseNewYear(2027)).toEqual({ year: 2027, month: 2, day: 6 });
     expect(chineseNewYear(2099)).toBeUndefined();

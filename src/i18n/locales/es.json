@@ -1,10 +1,20 @@
 {
-  "today": {
-    "title": "Hoy",
+  "home": {
+    "title": "Mis rituales",
+    "today": "Hoy",
     "empty": "Hoy no hay ritual. Descansa, mañana seguimos.",
-    "upcoming": "Próximamente",
     "streak": "Días seguidos: {{count}}",
-    "tomorrow": "Mañana"
+    "calendar": "Calendario",
+    "history": "Historial",
+    "noRituals": "No hay rituales este día.",
+    "notify": "Recordatorio",
+    "mutedRitual": "Los recordatorios de este ritual están desactivados en Ajustes"
+  },
+  "history": {
+    "summary": "Hechos: {{done}} · Perdidos: {{missed}}",
+    "done": "Hecho",
+    "missed": "Perdido",
+    "empty": "Aquí aparecerán los rituales pasados, hechos y perdidos."
   },
   "ritual": {
     "needs": "Qué necesitas",
@@ -15,29 +25,25 @@
     "done": "Hecho ✓",
     "locked": "Un ritual especial. Se desbloquea con la suscripción.",
     "subscribeSoon": "La suscripción llegará pronto",
-    "notFound": "Ritual no encontrado"
+    "notFound": "Ritual no encontrado",
+    "about": "Sobre el ritual"
   },
   "category": {
-    "weekly": "Ritual del día",
+    "weekly": "Ritual de la semana",
     "monthly": "Ritual del mes",
     "lunar": "Ritual lunar",
     "seasonal": "Ritual de temporada",
     "holiday": "Ritual festivo",
-    "personal": "Fecha especial"
+    "simoron": "Simoron"
   },
   "settings": {
     "title": "Ajustes",
     "language": "Idioma",
     "languageAuto": "Idioma del sistema",
-    "rhythm": "Con qué frecuencia",
-    "rhythmDaily": "Cada día",
-    "rhythmEveryOtherDay": "Un día sí, un día no",
     "reminders": "Recordatorios",
-    "payday": "Día de cobro",
-    "billsDay": "Día de facturas",
-    "birthday": "Cumpleaños",
-    "notSet": "Sin definir",
-    "clear": "Borrar",
+    "ritualNotifications": "Recordatorios por ritual",
+    "testPremium": "Suscripción (prueba)",
+    "testPremiumHint": "Desbloquea los rituales de pago para pruebas, sin pagar.",
     "disclaimer": "Los rituales son solo entretenimiento y no constituyen asesoramiento financiero. Ten cuidado con las velas."
   },
   "notification": {

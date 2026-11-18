@@ -1,6 +1,6 @@
 import { planReminders } from '../plan';
 
-const profile = { cycleStart: '2026-10-19', rhythm: 'daily' as const };
+const profile = {};
 
 describe('planReminders', () => {
   const now = new Date(2026, 9, 22, 7, 0); // Thursday 22 October 2026, 07:00
@@ -24,6 +24,19 @@ describe('planReminders', () => {
     const ritual = plans.find((p) => p.url.startsWith('/ritual/moon-water'))!;
     expect(ritual.title).toBe('Moon Water');
     expect([ritual.at.getDate(), ritual.at.getHours()]).toEqual([26, 22]);
+  });
+
+  it('skips muted rituals and muted days', () => {
+    const plans = planReminders(
+      { mutedRituals: ['golden-orange'], mutedOccurrences: ['cinnamon-coffee@2026-10-29'] },
+      'en',
+      true,
+      now,
+    );
+    const urls = plans.map((p) => p.url);
+    expect(urls.some((u) => u.startsWith('/ritual/golden-orange'))).toBe(false);
+    expect(urls).toContain('/ritual/cinnamon-coffee?date=2026-10-22');
+    expect(urls).not.toContain('/ritual/cinnamon-coffee?date=2026-10-29');
   });
 
   it('stays under the iOS limit of pending notifications', () => {

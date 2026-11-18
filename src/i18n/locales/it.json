@@ -1,10 +1,20 @@
 {
-  "today": {
-    "title": "Oggi",
+  "home": {
+    "title": "I miei rituali",
+    "today": "Oggi",
     "empty": "Oggi nessun rituale. Riposati, domani si continua.",
-    "upcoming": "In arrivo",
     "streak": "Giorni di fila: {{count}}",
-    "tomorrow": "Domani"
+    "calendar": "Calendario",
+    "history": "Cronologia",
+    "noRituals": "Nessun rituale in questo giorno.",
+    "notify": "Promemoria",
+    "mutedRitual": "I promemoria di questo rituale sono disattivati nelle impostazioni"
+  },
+  "history": {
+    "summary": "Fatti: {{done}} · Saltati: {{missed}}",
+    "done": "Fatto",
+    "missed": "Saltato",
+    "empty": "Qui compariranno i rituali passati, fatti e saltati."
   },
   "ritual": {
     "needs": "Cosa ti serve",
@@ -15,29 +25,25 @@
     "done": "Fatto ✓",
     "locked": "Un rituale speciale. Si sblocca con l’abbonamento.",
     "subscribeSoon": "L’abbonamento arriverà presto",
-    "notFound": "Rituale non trovato"
+    "notFound": "Rituale non trovato",
+    "about": "Il rituale"
   },
   "category": {
-    "weekly": "Rituale del giorno",
+    "weekly": "Rituale della settimana",
     "monthly": "Rituale del mese",
     "lunar": "Rituale lunare",
     "seasonal": "Rituale di stagione",
     "holiday": "Rituale di festa",
-    "personal": "Data speciale"
+    "simoron": "Simoron"
   },
   "settings": {
     "title": "Impostazioni",
     "language": "Lingua",
     "languageAuto": "Lingua di sistema",
-    "rhythm": "Ogni quanto",
-    "rhythmDaily": "Ogni giorno",
-    "rhythmEveryOtherDay": "A giorni alterni",
     "reminders": "Promemoria",
-    "payday": "Giorno di paga",
-    "billsDay": "Giorno delle bollette",
-    "birthday": "Compleanno",
-    "notSet": "Non impostato",
-    "clear": "Cancella",
+    "ritualNotifications": "Promemoria per rituale",
+    "testPremium": "Abbonamento (test)",
+    "testPremiumHint": "Sblocca i rituali a pagamento per i test, senza pagare.",
     "disclaimer": "I rituali sono solo un intrattenimento e non sono consulenza finanziaria. Attenzione alle candele accese."
   },
   "notification": {

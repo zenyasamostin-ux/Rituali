@@ -2,18 +2,19 @@ import { Stack } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
 
-import { Chip, controlStyles, Section, Stepper } from '../components/controls';
-import { LANGUAGE_NAMES, LANGUAGES } from '../i18n';
-import { daysInMonth } from '../schedule/localDate';
-import { type Profile, useAppState } from '../state/AppState';
+import { Chip, controlStyles, Section } from '../components/controls';
+import { LANGUAGE_NAMES, LANGUAGES, ritualText } from '../i18n';
+import { CATALOG } from '../rituals/catalog';
+import { useAppState } from '../state/AppState';
 import { colors, spacing } from '../theme';
 
 export default function SettingsScreen() {
   const { t } = useTranslation();
   const { profile, updateProfile, language } = useAppState();
+  const muted = profile.mutedRituals ?? [];
 
-  const monthName = (m: number) => new Date(2000, m - 1, 1).toLocaleDateString(language, { month: 'long' });
-  const birthday = profile.birthday;
+  const toggleRitual = (id: string) =>
+    updateProfile({ mutedRituals: muted.includes(id) ? muted.filter((m) => m !== id) : [...muted, id] });
 
   return (
     <>
@@ -37,57 +38,29 @@ export default function SettingsScreen() {
           </View>
         </Section>
 
-        <Section title={t('settings.rhythm')}>
-          <View style={controlStyles.row}>
-            <Chip
-              label={t('settings.rhythmDaily')}
-              selected={profile.rhythm === 'daily'}
-              onPress={() => updateProfile({ rhythm: 'daily' })}
+        <ToggleRow
+          label={t('settings.testPremium')}
+          hint={t('settings.testPremiumHint')}
+          value={profile.testPremium}
+          onChange={(testPremium) => updateProfile({ testPremium })}
+        />
+
+        <ToggleRow
+          label={t('settings.reminders')}
+          value={profile.remindersOn}
+          onChange={(remindersOn) => updateProfile({ remindersOn })}
+        />
+
+        <Section title={t('settings.ritualNotifications')}>
+          {CATALOG.map((ritual) => (
+            <ToggleRow
+              key={ritual.id}
+              label={`${ritual.emoji}  ${ritualText(ritual.id, language).title}`}
+              value={profile.remindersOn && !muted.includes(ritual.id)}
+              disabled={!profile.remindersOn}
+              onChange={() => toggleRitual(ritual.id)}
             />
-            <Chip
-              label={t('settings.rhythmEveryOtherDay')}
-              selected={profile.rhythm === 'everyOtherDay'}
-              onPress={() => updateProfile({ rhythm: 'everyOtherDay' })}
-            />
-          </View>
-        </Section>
-
-        <View style={styles.switchRow}>
-          <Text style={styles.switchLabel}>{t('settings.reminders')}</Text>
-          <Switch
-            value={profile.remindersOn}
-            onValueChange={(remindersOn) => updateProfile({ remindersOn })}
-            trackColor={{ true: colors.gold }}
-            thumbColor={colors.card}
-          />
-        </View>
-
-        <MonthDay field="payday" label={t('settings.payday')} />
-        <MonthDay field="billsDay" label={t('settings.billsDay')} />
-
-        <Section title={t('settings.birthday')}>
-          {birthday ? (
-            <View style={styles.birthday}>
-              <Stepper
-                value={birthday.month}
-                min={1}
-                max={12}
-                format={monthName}
-                onChange={(month) =>
-                  updateProfile({ birthday: { month, day: Math.min(birthday.day, daysInMonth(2000, month)) } })
-                }
-              />
-              <Stepper
-                value={birthday.day}
-                min={1}
-                max={daysInMonth(2000, birthday.month)}
-                onChange={(day) => updateProfile({ birthday: { ...birthday, day } })}
-              />
-              <Chip label={t('settings.clear')} selected={false} onPress={() => updateProfile({ birthday: undefined })} />
-            </View>
-          ) : (
-            <Chip label={t('settings.notSet')} selected={false} onPress={() => updateProfile({ birthday: { month: 1, day: 1 } })} />
-          )}
+          ))}
         </Section>
 
         <Text style={styles.disclaimer}>{t('settings.disclaimer')}</Text>
@@ -96,30 +69,41 @@ export default function SettingsScreen() {
   );
 }
 
-function MonthDay({ field, label }: { field: 'payday' | 'billsDay'; label: string }) {
-  const { t } = useTranslation();
-  const { profile, updateProfile } = useAppState();
-  const value = profile[field];
-  const set = (v: number | undefined) => updateProfile({ [field]: v } as Partial<Profile>);
-
+function ToggleRow({
+  label,
+  hint,
+  value,
+  disabled,
+  onChange,
+}: {
+  label: string;
+  hint?: string;
+  value: boolean;
+  disabled?: boolean;
+  onChange: (value: boolean) => void;
+}) {
   return (
-    <Section title={label}>
-      {value ? (
-        <View style={controlStyles.row}>
-          <Stepper value={value} min={1} max={31} onChange={set} />
-          <Chip label={t('settings.clear')} selected={false} onPress={() => set(undefined)} />
-        </View>
-      ) : (
-        <Chip label={t('settings.notSet')} selected={false} onPress={() => set(1)} />
-      )}
-    </Section>
+    <View style={styles.switchRow}>
+      <View style={styles.switchText}>
+        <Text style={styles.switchLabel}>{label}</Text>
+        {hint && <Text style={styles.hint}>{hint}</Text>}
+      </View>
+      <Switch
+        value={value}
+        disabled={disabled}
+        onValueChange={onChange}
+        trackColor={{ true: colors.gold }}
+        thumbColor={colors.card}
+      />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: { padding: spacing.md, gap: spacing.lg, paddingBottom: spacing.xl },
-  switchRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  switchRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: spacing.md },
+  switchText: { flex: 1, gap: 2 },
   switchLabel: { fontSize: 17, color: colors.ink },
-  birthday: { gap: spacing.sm, alignItems: 'flex-start' },
+  hint: { fontSize: 13, color: colors.muted },
   disclaimer: { fontSize: 13, color: colors.muted, lineHeight: 18 },
 });

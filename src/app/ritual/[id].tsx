@@ -38,6 +38,7 @@ export default function RitualScreen() {
         <Text style={styles.title}>{text.title}</Text>
         <Text style={styles.when}>{when}</Text>
 
+        <Block label={t('ritual.about')} body={text.about} />
         <Block label={t('ritual.needs')} body={text.needs} />
 
         {locked ? (
@@ -48,13 +49,14 @@ export default function RitualScreen() {
         ) : (
           <>
             <Block label={t('ritual.action')} body={text.action} />
-            {revealed ? (
-              <Block label={t('ritual.incantation')} body={text.incantation} accent />
-            ) : (
-              <Pressable style={styles.secondary} onPress={() => setRevealed(true)}>
-                <Text style={styles.secondaryText}>{t('ritual.reveal')}</Text>
-              </Pressable>
-            )}
+            {text.incantation &&
+              (revealed ? (
+                <Block label={t('ritual.incantation')} body={text.incantation} accent />
+              ) : (
+                <Pressable style={styles.secondary} onPress={() => setRevealed(true)}>
+                  <Text style={styles.secondaryText}>{t('ritual.reveal')}</Text>
+                </Pressable>
+              ))}
             {!isFuture && (
               <Pressable style={[styles.primary, isDone && styles.primaryDone]} onPress={() => toggleDone(doneKey)}>
                 <Text style={styles.primaryText}>{isDone ? t('ritual.done') : t('ritual.markDone')}</Text>

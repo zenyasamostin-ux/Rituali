@@ -3,24 +3,17 @@ import type { SeasonEvent } from '../astro/seasons';
 
 export type Tier = 'free' | 'premium';
 
-export type Category = 'weekly' | 'monthly' | 'lunar' | 'seasonal' | 'holiday' | 'personal';
+export type Category = 'weekly' | 'monthly' | 'lunar' | 'seasonal' | 'holiday' | 'simoron';
 
 /** When a ritual happens. Times live on the ritual, rules only pick the day. */
 export type Rule =
-  /** Two alternating weeks A and B; weekday is ISO (1 = Monday). */
-  | { kind: 'cycle'; week: 'A' | 'B'; weekday: number }
+  /** Every week on this ISO weekday (1 = Monday). */
+  | { kind: 'weekly'; weekday: number }
   | { kind: 'monthDay'; day: number }
-  | { kind: 'lastDayOfMonth' }
-  /** A day of the month the user sets in their profile. */
-  | { kind: 'profileDay'; field: 'payday' | 'billsDay' }
   | { kind: 'moon'; phase: MoonPhase }
   | { kind: 'season'; event: SeasonEvent }
   | { kind: 'fixedDate'; month: number; day: number }
-  /** 01.01, 02.02 … 12.12 */
-  | { kind: 'mirrorDate' }
-  | { kind: 'movable'; event: 'chineseNewYear' | 'maslenitsa' }
-  | { kind: 'eclipse' }
-  | { kind: 'birthday' };
+  | { kind: 'movable'; event: 'chineseNewYear' };
 
 export interface Ritual {
   id: string;
@@ -35,7 +28,10 @@ export interface Ritual {
 /** The words of a ritual in one language. */
 export interface RitualText {
   title: string;
+  /** What the ritual means and where it comes from. */
+  about: string;
   needs: string;
   action: string;
-  incantation: string;
+  /** Words to say; some rituals have none. */
+  incantation?: string;
 }
